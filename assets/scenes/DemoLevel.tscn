@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/scenes/blocks/BlockStart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/blocks/BlockEnd.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/blocks/BlockOperation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/LevelController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/blocks/BlockCondition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scenes/joints/JointRightDown.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/scenes/joints/JointLeftDown.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/joints/JointUpLeft.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/scenes/joints/JointUpRight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/scenes/joints/MergeLeftRightDown.tscn" type="PackedScene" id=10]
+
+[node name="DemoLevel" type="Node2D"]
+
+[node name="BlockStart" parent="." groups=[
+"dataunits",
+] instance=ExtResource( 1 )]
+position = Vector2( 300, 40 )
+
+[node name="BlockEnd" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, 580 )
+
+[node name="BlockOperation" parent="." instance=ExtResource( 3 )]
+position = Vector2( 300, 160 )
+
+[node name="BlockOperation2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 180, 360 )
+
+[node name="BlockOperation3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 420, 360 )
+
+[node name="LevelController" parent="." instance=ExtResource( 4 )]
+
+[node name="BlockCondition" parent="." instance=ExtResource( 5 )]
+position = Vector2( 300, 260 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="JointRightDown" parent="." instance=ExtResource( 6 )]
+position = Vector2( 180, 260 )
+
+[node name="JointRightDown2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 420, 260 )
+
+[node name="JointRightDown3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 420, 460 )
+
+[node name="JointRightDown4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 180, 460 )
+
+[node name="JointRightDown5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 300, 460 )
