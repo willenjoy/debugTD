@@ -9,19 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "BlockBase",
 "class": "BlockActiveBase",
 "language": "GDScript",
 "path": "res://assets/scripts/BlockActiveBase.gd"
+}, {
+"base": "Node2D",
+"class": "BlockBase",
+"language": "GDScript",
+"path": "res://assets/scripts/BlockBase.gd"
 }, {
 "base": "RigidBody2D",
 "class": "DataUnit",
 "language": "GDScript",
 "path": "res://assets/scripts/DataUnit.gd"
+}, {
+"base": "Node",
+"class": "LevelController",
+"language": "GDScript",
+"path": "res://assets/scripts/LevelController.gd"
 } ]
 _global_script_class_icons={
 "BlockActiveBase": "",
-"DataUnit": ""
+"BlockBase": "",
+"DataUnit": "",
+"LevelController": ""
 }
 
 [application]

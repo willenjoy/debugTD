@@ -1,15 +1,18 @@
-extends Node2D
+extends BlockBase
 
 export (PackedScene) var DataUnit
 
 var spawn_count = 0
 var input_data = []
 var max_spawn_count = 0
+onready var datagroup = get_node('../../DataGroup')
+
 
 func _ready():
-    var controller = get_node('../LevelController')
-    input_data = controller.input_data
+    input_data = level_controller().input_data
     max_spawn_count = len(input_data)
+    
+    datagroup.position = position
     
     
 func _on_SpawnTimer_timeout():
@@ -26,4 +29,4 @@ func _on_SpawnTimer_timeout():
     unit.set_value(input_data[spawn_count])
     spawn_count += 1
     
-    add_child(unit)
+    datagroup.add_child(unit)

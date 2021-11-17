@@ -1,6 +1,8 @@
+class_name LevelController
 extends Node
 
 
+var debug = true
 var input_data = [1, 2, 3, 4, 5]
 var output_data = [2, 1, 6, 3, 10]
 
@@ -27,8 +29,9 @@ var block_refs = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    for c in get_parent().get_children():
-        if 'Block' in c.name and c.get('block_id'):
+    var blockgroup = get_node('../BlockGroup')
+    for c in blockgroup.get_children():
+        if c.get('block_id'):
             var bid = c.block_id
             if bid in block_refs:
                 var ref = funcref(self, bid)

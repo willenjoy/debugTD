@@ -1,11 +1,10 @@
-extends Node2D
+extends BlockBase
 
 var output_data = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    var controller = get_node('../LevelController')
-    output_data = controller.output_data
+    output_data = level_controller().output_data
 
 
 func _on_Area2D_body_entered(body):

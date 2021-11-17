@@ -1,7 +1,5 @@
 class_name BlockActiveBase
-extends Node2D
-
-export (String) var block_id
+extends BlockBase
 
 var inner : FuncRef
 
