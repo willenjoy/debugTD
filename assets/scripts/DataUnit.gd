@@ -4,7 +4,7 @@ extends RigidBody2D
 enum States {UNKNOWN, GOOD, BUG}
 
 var is_bug : bool = false
-var is_known : bool = true
+var is_known : bool = false
 
 var index = 0
 var value = 0
@@ -15,7 +15,8 @@ var textures = [
 ] 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():    
+func _ready():
+    $Label.visible = get_node('../../LevelController').debug  
     set_texture()
 
 

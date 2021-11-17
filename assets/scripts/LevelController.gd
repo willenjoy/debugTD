@@ -2,8 +2,8 @@ class_name LevelController
 extends Node
 
 
-var debug = true
-var speed = 200
+export (bool) var debug = true
+export (int) var speed = 200
 
 
 func bo1(value):
