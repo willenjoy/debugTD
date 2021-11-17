@@ -13,9 +13,7 @@
 
 [node name="DemoLevel" type="Node2D"]
 
-[node name="BlockStart" parent="." groups=[
-"dataunits",
-] instance=ExtResource( 1 )]
+[node name="BlockStart" parent="." instance=ExtResource( 1 )]
 position = Vector2( 300, 60 )
 
 [node name="BlockEnd" parent="." instance=ExtResource( 2 )]
@@ -23,18 +21,22 @@ position = Vector2( 300, 580 )
 
 [node name="BlockOperation" parent="." instance=ExtResource( 3 )]
 position = Vector2( 300, 180 )
+block_id = "bo1"
 
 [node name="BlockOperation2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 180, 380 )
+block_id = "bo_left"
 
 [node name="BlockOperation3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 420, 380 )
+block_id = "bo_right"
 
 [node name="LevelController" parent="." instance=ExtResource( 4 )]
 
 [node name="BlockCondition" parent="." instance=ExtResource( 5 )]
 position = Vector2( 300, 300 )
 scale = Vector2( 0.5, 0.5 )
+block_id = "bc"
 
 [node name="JointRightDown" parent="." instance=ExtResource( 6 )]
 position = Vector2( 180, 300 )

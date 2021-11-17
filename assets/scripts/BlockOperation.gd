@@ -1,4 +1,4 @@
-extends Node2D
+extends BlockActiveBase
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,4 +7,4 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
     if body.is_in_group('dataunits'):
-        body.set_value(body.value * 1)
+        body.set_value(inner.call_func(body.value))
