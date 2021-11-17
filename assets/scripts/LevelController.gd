@@ -3,8 +3,7 @@ extends Node
 
 
 var debug = true
-var input_data = [1, 2, 3, 4, 5]
-var output_data = [2, 1, 6, 3, 10]
+var speed = 200
 
 
 func bo1(value):
@@ -16,7 +15,7 @@ func bo_left(value):
     
 
 func bo_right(value):
-    return value - 1
+    return value - 2 #1
 
 
 func bc(value):
@@ -26,6 +25,16 @@ func bc(value):
 var block_refs = [
     'bo1', 'bo_left', 'bo_right', 'bc'
 ]
+var data = {
+    'bs': [1, 2, 3, 4, 5],
+    
+    'bo1': [1, 2, 3, 4, 5],
+    'bc': [false, true, false, true, false],
+    'bo_left': [2, -1, 6, -1, 10],
+    'bo_right': [-1, 1, -1, 3, -1],
+    
+    'be': [2, 1, 6, 3, 10]    
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,3 +45,6 @@ func _ready():
             if bid in block_refs:
                 var ref = funcref(self, bid)
                 c.set_inner(ref)
+            if bid in data:
+                c.set_data(data[bid])
+                print(c, ' ', c.name, ' ', c.data)
