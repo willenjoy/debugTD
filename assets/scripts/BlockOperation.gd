@@ -2,8 +2,7 @@ extends BlockActiveBase
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    $Label.text = block_id
-    $Label.visible = level_controller().debug
+    pass
 
 
 func _on_Area2D_body_entered(body):

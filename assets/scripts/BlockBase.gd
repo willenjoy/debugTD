@@ -6,6 +6,11 @@ export (String) var block_id
 var data = []
 var data_count = 0
 
+
+func _ready():
+    $Label.text = block_id
+    $Label.visible = level_controller().debug
+
 # Called when the node enters the scene tree for the first time.
 func level_controller():
     return get_node('../../LevelController')

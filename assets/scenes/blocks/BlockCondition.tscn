@@ -19,4 +19,16 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = -120.0
+margin_top = -60.0
+margin_right = -40.0
+margin_bottom = -40.0
+rect_scale = Vector2( 3, 3 )
+text = "block_id"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
