@@ -8,6 +8,7 @@ extents = Vector2( 30.6589, 10 )
 
 [node name="BlockOperation" type="Node2D"]
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
