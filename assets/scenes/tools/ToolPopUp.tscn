@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/images/dataunit-good.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/tool-fixl-icon-stub.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/ToolPopUp.gd" type="Script" id=2]
+[ext_resource path="res://assets/scenes/tools/ToolAddButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/tools/ToolReveal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/tools/ToolFix.tscn" type="PackedScene" id=5]
 
 [node name="ToolPopUp" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,10 +22,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ToolGroup" type="Node2D" parent="."]
 visible = false
-scale = Vector2( 8, 8 )
-z_index = 2
-texture = ExtResource( 1 )
-[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
-[connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+position = Vector2( -40, -40 )
+
+[node name="ToolRevealButton" parent="ToolGroup" instance=ExtResource( 3 )]
+margin_left = -65.0
+margin_top = -62.0
+margin_right = 191.0
+margin_bottom = 194.0
+tool_scene = ExtResource( 4 )
+
+[node name="ToolFixButton" parent="ToolGroup" instance=ExtResource( 3 )]
+margin_left = 76.0
+margin_top = -62.0
+margin_right = 332.0
+margin_bottom = 194.0
+texture_normal = ExtResource( 1 )
+tool_scene = ExtResource( 5 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

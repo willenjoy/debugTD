@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/scripts/ToolAddButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/tool-reveal-icon-stub.png" type="Texture" id=2]
+
+[node name="ToolAddButton" type="TextureButton"]
+margin_right = 256.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_ToolAddButton_pressed"]

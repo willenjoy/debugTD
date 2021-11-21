@@ -6,9 +6,5 @@ func _ready():
     pass # Replace with function body.
 
 
-func _on_Button_mouse_entered():
-    $Sprite.visible = true
-
-
-func _on_Button_mouse_exited():
-    $Sprite.visible = false
+func _on_Button_pressed():
+    $ToolGroup.visible = true
