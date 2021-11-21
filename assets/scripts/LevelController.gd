@@ -15,7 +15,11 @@ func bo_left(value):
     
 
 func bo_right(value):
-    return value - 2 #1
+    return value - 2
+    
+    
+func bo_right_fix(value):
+    return value - 1
 
 
 func bc(value):
@@ -23,7 +27,7 @@ func bc(value):
 
 
 var block_refs = [
-    'bo1', 'bo_left', 'bo_right', 'bc'
+    'bo1', 'bo_left', 'bo_right', 'bc', 'bo_right_fix'
 ]
 var data = {
     'bs': [1, 2, 3, 4, 5],
@@ -43,8 +47,11 @@ func _ready():
         if c.get('block_id'):
             var bid = c.block_id
             if bid in block_refs:
-                var ref = funcref(self, bid)
-                c.set_inner(ref)
+                c.set_inner(get_funcref(bid))
             if bid in data:
                 c.set_data(data[bid])
                 print(c, ' ', c.name, ' ', c.data)
+
+
+func get_funcref(bid):
+    return funcref(self, bid)

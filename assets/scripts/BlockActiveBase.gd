@@ -10,3 +10,4 @@ func _ready():
 
 func set_inner(new_inner):
     inner = new_inner
+    print('Set new inner 1 -> %s' % inner.call_func(1))
