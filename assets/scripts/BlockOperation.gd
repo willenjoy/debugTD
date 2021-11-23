@@ -7,6 +7,10 @@ func _ready():
     pass
 
 
+func reset():
+    pass
+
+
 func _on_Area2D_body_entered(body):
     if body.is_in_group('dataunits'):
         var new_value = inner.call_func(body.value)

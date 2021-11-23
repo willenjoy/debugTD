@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/scenes/tools/ToolFix.tscn" type="PackedScene" id=5]
 
 [node name="ToolPopUp" type="Node2D"]
+z_index = -3
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
@@ -25,6 +26,7 @@ __meta__ = {
 [node name="ToolGroup" type="Node2D" parent="."]
 visible = false
 position = Vector2( -40, -40 )
+z_index = 5
 
 [node name="ToolRevealButton" parent="ToolGroup" instance=ExtResource( 3 )]
 margin_left = -65.0

@@ -2,5 +2,34 @@
 
 [ext_resource path="res://assets/scripts/LevelController.gd" type="Script" id=1]
 
-[node name="LevelController" type="Node"]
+[node name="LevelController" type="Control"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestLabel" type="Label" parent="."]
+margin_left = 480.0
+margin_top = 4.0
+margin_right = 539.0
+margin_bottom = 36.0
+rect_scale = Vector2( 2, 2 )
+text = "Test #X"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RunTimer" type="Timer" parent="."]
+one_shot = true
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="timeout" from="RunTimer" to="." method="_on_RunTimer_timeout"]

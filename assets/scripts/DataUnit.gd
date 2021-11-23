@@ -6,6 +6,7 @@ enum States {UNKNOWN, GOOD, BUG}
 var is_bug : bool = false
 var is_known : bool = false
 
+var unit_velocity = Vector2(0, 0)
 var index = 0
 var value = 0
 var textures = [
@@ -33,7 +34,6 @@ func set_value(new_value):
     set_label()
     
     
-    
 func set_texture():
     # is_known  is_bug  state
     #        0       0      0
@@ -53,9 +53,24 @@ func set_is_known(is_known_new):
     is_known = is_known_new
     set_texture()
 
-func queue_free_delayed(delay):
+
+func set_velocity(new_velocity):
+    linear_velocity = new_velocity
+    unit_velocity = new_velocity
+    
+    
+func pause():
     linear_velocity = Vector2(0, 0)
+    
+
+func resume():
+    linear_velocity = unit_velocity
+    
+
+func queue_free_delayed(delay):
+    set_velocity(Vector2(0, 0))
     $Timer.start(delay)
+
 
 func _on_Timer_timeout():
     queue_free()

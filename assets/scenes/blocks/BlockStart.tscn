@@ -13,7 +13,6 @@ DataUnit = ExtResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="Label" type="Label" parent="."]

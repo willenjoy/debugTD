@@ -64,3 +64,4 @@ z_index = 2
 [node name="LevelController" parent="." instance=ExtResource( 4 )]
 debug = false
 speed = 100
+[connection signal="done" from="BlockGroup/BlockEnd" to="LevelController" method="_on_BlockEnd_done"]

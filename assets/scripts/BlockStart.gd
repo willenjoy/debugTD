@@ -15,6 +15,10 @@ func _ready():
     datagroup.position = position
     
     
+func reset():
+    spawn_count = 0
+    
+    
 func _on_SpawnTimer_timeout():
     if spawn_count >= data_count:
         return
@@ -23,7 +27,7 @@ func _on_SpawnTimer_timeout():
     unit.add_to_group('dataunits')
     
     unit.position = Vector2(0, 0)
-    unit.linear_velocity = Vector2(0, speed)
+    unit.set_velocity(Vector2(0, speed))
     
     unit.set_index(spawn_count)
     unit.set_value(data[spawn_count])
